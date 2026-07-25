@@ -37,7 +37,7 @@ up:
 restart: down up
 
 composer-i:
-	docker compose exec php-fpm composer i --no-cache
+	docker compose run --rm php-fpm composer i --no-cache
 
 composer-u:
 	docker compose exec php-fpm composer u --no-cache
@@ -96,8 +96,8 @@ sh-node:
 	docker compose exec node sh
 
 npm-i:
-	docker compose exec node npm i
-	docker compose exec node npm run build
+	docker compose run --rm node npm i
+	docker compose run --rm node npm run build
 
 npm-up:
 	docker compose exec node npm up
