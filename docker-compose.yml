@@ -85,6 +85,7 @@ services:
       - nginx
     working_dir: /app
     user: 1000:1000
+    init: true # To prevent 'esbuild' from becoming a zombie process
     tty: true
     restart: always
 
